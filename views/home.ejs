@@ -1,0 +1,38 @@
+<%- include('partials/header'); -%>
+
+<h2 style="text-align: right;">
+  <%= city %>-
+  <%= country %>
+  ,
+  <%= temp %>
+  &deg;C,
+  <%= weather %>
+</h2>
+
+<% var iconurl = "http://openweathermap.org/img/w/" + icon + ".png"; %>
+  <div style="text-align: right;" id="icon"><img id="wicon" src="<%= iconurl %>" ></div>
+
+
+
+<!-- <h3 style="text-align:right;">
+
+</h3> -->
+<h1>Home</h1>
+<p>
+  <%= homestart %>
+  </p>
+  <% for(var i=0;i<postss.length;i++){ %>
+  <%  let temp=postss[i]; %>
+  <%  var title1=temp.title; %>
+  <%  var body1=temp.bodyy; %>
+  <%  var body2=body1.substring(0,100); %>
+  <%  var body2=body2+'...'; %>
+    <h1>
+      <%= title1 %>
+    </h1>
+    <p>
+      <%= body2 %>
+    <a href="http://localhost:4000/posts/<%= title1 %>">Read More</a>
+      </p>
+  <% } %>
+<%- include('partials/footer'); -%>
