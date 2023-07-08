@@ -41,7 +41,7 @@ const getMoreAPIDataWithUrl = async newUrl => {
     const callDataInOrder = async () => {
       const covidData = await getCovidData();
       console.log('index.html 27 | covid Data', covidData.ip);
-      var url1="https://geo.ipify.org/api/v2/country,city?apiKey=at_g2PzHJCYkpdyyPKJxhuC00f2Buoxf&ipAddress="+covidData.ip;
+      var url1="https://geo.ipify.org/api/v2/country,city?apiKey="API_KEY""+covidData.ip;
 
        const detailData = await getMoreAPIDataWithUrl(url1);
        const v4=[];
@@ -61,7 +61,7 @@ app.get('/',async function(req,res){
   var longi= long1.toString();
   console.log(lati);
   console.log(longi);
-  var a1="https://api.openweathermap.org/data/2.5/weather?lat="+lati+"&lon="+longi+"&appid=ebc1a6e0828b3a758a3edebe3e12b2e7";
+  var a1="https://api.openweathermap.org/data/2.5/weather?lat="+lati+"&lon="+longi+"&appid=API_KEY";
   console.log(a1);
   const detailData = await getMoreAPIDataWithUrl(a1);
   //res.send(detailData);
